@@ -16,6 +16,7 @@ int main(string a) {
 	for (int i = 0; i < 10; i++) {
 
 		std::cout << onoma[i] << std::endl;
+cout<<"bill"endl;
 	}
 	
 
