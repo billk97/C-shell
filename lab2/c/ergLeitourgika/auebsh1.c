@@ -3,6 +3,7 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <string.h>
 #include <sys/wait.h>
 int main(int argc, char const *argv[]) {
 char InputBuffer [255] ="bill";
@@ -19,6 +20,19 @@ pid_t pid;
 //fgets(InputBuffer,sizeof(InputBuffer),stdin);//kati prepei na elenxo stin eisodo
     printf("auebsh1> \n");
     fgets(InputBuffer,sizeof(InputBuffer),stdin);//kati prepei na elenxo stin eisodo
+    /*debuge*/ printf("InputBuffer: %s" ,InputBuffer);
+    char path [7] = "/bin/";
+    /*debug*/printf("path: %s \n ",path);
+    append(path,"bill");
+    printf("path: %s\n",path );
+    //char  * new_str;
+  //  malloc(strlen(path)+strlen(dirPath)+1);
+  //  new_str[0]='/0';
+    //new_str ="%s",path;
+    //strcat(new_str,path);
+    //strcat(new_str,dirPath);
+  //  append(new_str,dirPath);
+   /*debuge*/ //printf("new_str: %s", new_str);
     pid =fork();
     if(pid < 0)
     {
@@ -27,12 +41,16 @@ pid_t pid;
     }
     if(pid == 0)
     {
+
+
+
       //printf("the chiled:\n" );foe debuging
-      execl("/bin/ls","InputBuffer",NULL);//to null gt mpenei.
+    //  execl("/bin/pwd","InputBuffer",NULL);//to null gt mpenei.
       printf("end of exec\n");
     }
-    printf("waiting\n");
+  //  printf("waiting\n");
     pid_t wait(int *status);
+    //to apo panv mesa se while
 
     //printf("InputBuffer %s\n",InputBuffer );
 
