@@ -1,0 +1,83 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+------------------------------------------
+ENTITY lab2 IS 
+		PORT(x1,x2,x3 : IN std_logic;
+		F: OUT std_logic);
+END lab2;
+
+
+ARCHITECTURE my_arch OF  lab2 IS 
+signal c1,c2,c3,f :std_logic;
+
+COMPONENT OR1 
+	PORT (x1,x3 : IN std_logic;
+	 out1 : out std_logic);
+END COMPONENT;
+
+COMPONENT OR2 
+	PORT (x1,NOT2 : IN std_logic;
+	out2 : out std_logic);
+END COMPONENT;
+
+COMPONENT NOT1 
+	PORT (x2 : IN std_logic;
+	NOT2: out std_logic);
+END COMPONENT;
+
+COMPONENT AND1 
+	PORT (out1,out2: IN std_logic;
+	andtel: out std_logic);
+END COMPONENT;
+
+BEGIN
+RESALT4 : NOT1 PORT MAP (x2,c1);
+RESALT1 : OR2  PORT MAP (x1,x3,c2);
+RESALT2 : OR2  PORT MAP (x1,c1,c3);
+RESALT3 : AND1 PORT MAP (c2,c3,f);
+
+END my_arch;
+-----------------------------------------------
+---------------------------------------------------
+------------------------------------------------
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY OR2 IS 
+		PORT(INPUT1,INPUT2 : IN std_logic;
+		OUTPUT1: OUT std_logic);
+END OR2;
+ARCHITECTURE OR_POYKALO OF OR2
+BEGIN 
+		OUTPUT1 <= INPUT1 OR INPUT2;
+END OR_POYKALO
+---------------------------------------------
+---------------------------------------------
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY AND1 IS 
+		PORT(INPUT1,INPUT2 : IN std_logic;
+		OUTPUT2: OUT std_logic);
+END AND1;
+
+ARCHITECTURE AND_POYKALO OF AND1
+BEGIN 
+		OUTPUT2 <= INPUT1 AND INPUT2;
+END AND_POYKALO
+-----------------------------------------
+-----------------------------------------
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY NOT1  IS 
+		PORT(INPUT1: IN std_logic;
+		OUTPUT3: OUT std_logic);
+END NOT1;
+
+ARCHITECTURE NOT_POYKALO OF NOT1
+BEGIN 
+		OUTPUT3 <= NOT INPUT2;
+END NOT_POYKALO
+---------------------------------------------
