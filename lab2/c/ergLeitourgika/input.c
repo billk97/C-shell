@@ -2,16 +2,28 @@
 #include <string.h>
 int main (  int argc, char const *argv[])
 {
-  int i;
-  char eisodos [255]="gia me lene basilh";
-  const char my = " ";
-  for(i=0;i<255;i++ ||eisodos[i]=='\0')
+  int i=0;
+  char single_input;
+  printf(">");
+  if(scanf(" %c \n", &single_input)==EOF)
   {
-    if(eisodos[i]==' ')
-    {
-      printf("o look a space: ");
-      printf("i: %d\n",i );
-    }
+    printf("eof: %c\n",single_input);
+    return 0;
+  }//end if
+  printf("%s\n", );
+  if ( single_input == '\n' ) {
+      printf( ":O look c is equal to \\n"  );
   }
-
-}
+  printf("single_input %c \n",single_input );
+  while(single_input!=EOF)
+  {
+    printf("i: %d\n", i);
+    i++;
+    printf("previus input: %c\n",single_input);
+      if ( scanf( " %c", &single_input ) == EOF ) {
+          printf("eof break\n" );
+          break;
+      }//end if
+    printf(">");
+  }//end while
+}//end main

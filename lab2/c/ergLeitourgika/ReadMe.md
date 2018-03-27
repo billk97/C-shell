@@ -1,6 +1,6 @@
 # tasks
 
-- na bro gia ctrl-d
+- na bro gia ctrl-d des a,b
 
 - na kano elenxo eisodoy
 
@@ -8,4 +8,7 @@
 
 - gia fakelo ls px hh pwd
 
-- gia append() pos leitoyrgei
+- gia append() (pos leitoyrgei den xreiszetai nomizo)
+
+> ###paratiriseis
+to ctl-d den mapouhkeyeai se metablhth prepei na elenxetai katethian
