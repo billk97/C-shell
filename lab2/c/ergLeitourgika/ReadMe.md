@@ -10,6 +10,8 @@
 
 - gia append() (pos leitoyrgei den xreiszetai nomizo)
 
+- problem whith scanf takes "\n" as e characker
+
 > ###paratiriseis
 to ctl-d den mapouhkeyeai se metablhth prepei na elenxetai katethian
 
