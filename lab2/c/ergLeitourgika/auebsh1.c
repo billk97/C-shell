@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include  "Read.h"
 int main(int argc, char const *argv[]) {
 char *InputBuffer=Read();
@@ -13,27 +14,30 @@ pid_t pid;
   printf("8b   d8 8b d8 88      88      Y8b  d8  8b  d8  88  88  88 88 \n" );
   printf("8b88  8d88b   Y88888P Y88888P   Y88P    Y88P   YP  YP  YP Y88888P \n \n " );
   */
-  printf("ok\n");
   while (InputBuffer>0) {
-
     pid =fork();
     if(pid < 0)
     {
       perror("an error has ocured during the fork() creation \n");
       exit(1);
     }
+    printf("%s\n", &InputBuffer);
     if(pid == 0)
     {
-      printf("the chiled:\n" );//for debuging
-     execl("/bin/pwd","InputBuffer",NULL);//to null gt mpenei.
-      printf("end of exec\n");
+      //printf("the chiled:\n" );//for debuging
+      //char *command="/bin/%s",InputBuffer;
+      //char *arg[]={InputBuffer,NULL};
+      //
+      execlp("ls","ls",NULL);//to null gt mpenei.
+      //printf("end of exec\n");
     }
     else if(pid > 0)
     {
-        printf("I'm the father and should be waiting\n");
+        //printf("I'm the father and should be waiting\n");
     }
     pid_t wait(int *status);
     InputBuffer=Read();
+    pid_t wait(int *status);
   }//END OF WHILE
   return 0;
 }

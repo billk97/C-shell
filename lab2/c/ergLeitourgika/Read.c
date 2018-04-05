@@ -1,7 +1,8 @@
+#include "Read.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "Read.h"
-char * Read()
+
+const char *Read()
 {
   char Input[255];
   char s[1]=" ";
@@ -14,8 +15,6 @@ char * Read()
     exit(1);
   }
   token=strtok(Input,s);
-  printf("Input: %s\n",Input);
-  printf("token: %s\n",token);
   pass=Input;
   printf("pass: %s\n",pass );
   return pass ;

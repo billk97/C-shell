@@ -2,5 +2,5 @@
 #ifdef Read
 #define Read
 
-char * Read();
+const char * Read();
 #endif
