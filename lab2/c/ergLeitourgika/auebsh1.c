@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include  "Read.h"
+//#include  "Read.h"
 int main(int argc, char const *argv[]) {
-char *InputBuffer=Read();
+char InputBuffer;
+//InputBuffer=Read();
 pid_t pid;
+fflush(stdout);
+printf("%s\n",InputBuffer );
 /*
   printf("db    8    db d88888b db        o88b    d88b    88b  d88  d88888b \n" );
   printf("88    8    88 88      88      d8P  Y8  8P  Y8  88 YbdP 88 88 \n" );
@@ -14,6 +17,7 @@ pid_t pid;
   printf("8b   d8 8b d8 88      88      Y8b  d8  8b  d8  88  88  88 88 \n" );
   printf("8b88  8d88b   Y88888P Y88888P   Y88P    Y88P   YP  YP  YP Y88888P \n \n " );
   */
+  char bill[255]="pwd";
   while (InputBuffer>0) {
     pid =fork();
     if(pid < 0)
@@ -28,7 +32,7 @@ pid_t pid;
       //char *command="/bin/%s",InputBuffer;
       //char *arg[]={InputBuffer,NULL};
       //
-      execlp("ls","ls",NULL);//to null gt mpenei.
+      execlp(bill,bill,NULL);//to null gt mpenei.
       //printf("end of exec\n");
     }
     else if(pid > 0)
@@ -36,7 +40,7 @@ pid_t pid;
         //printf("I'm the father and should be waiting\n");
     }
     pid_t wait(int *status);
-    InputBuffer=Read();
+  //  InputBuffer=Read();
     pid_t wait(int *status);
   }//END OF WHILE
   return 0;
