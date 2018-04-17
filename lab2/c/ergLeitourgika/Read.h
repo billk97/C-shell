@@ -3,4 +3,5 @@
 #define Read
 
  char * Read();
+ char * Read2();
 #endif

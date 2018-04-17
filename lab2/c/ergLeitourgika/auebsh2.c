@@ -6,9 +6,8 @@
 #include <sys/wait.h>
 int main(int argc, char const *argv[]) {
 char * InputBuffer;
-InputBuffer=Read();
+InputBuffer=Read2();
 int status=0;
-//InputBuffer="1";
 pid_t pid;
 //fflush(stdout);
 /*
@@ -30,7 +29,7 @@ pid_t pid;
     if(pid == 0)
     {
       execlp(InputBuffer,InputBuffer,NULL);//to null gt mpenei.
-      printf("error\n");
+      //printf("end of exec\n");
     }
     else if(pid == 1)
     {
@@ -41,7 +40,8 @@ pid_t pid;
     while ((pid=wait(&status))>0);
     fflush(stdout);
     memset(InputBuffer,0,255);
-    InputBuffer=Read();
+    InputBuffer=Read2();
+
   }//END OF WHILE
   return 0;
 }
