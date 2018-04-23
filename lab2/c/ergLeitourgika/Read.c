@@ -39,6 +39,7 @@ char * Read2()
  strcpy(pass,token);
  fflush(stdout);
  memset(Input,0,255);
+ printf("pass: %s\n",pass );
  return (pass);
  free(pass);
 }

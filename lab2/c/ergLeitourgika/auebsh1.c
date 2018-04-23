@@ -5,9 +5,10 @@
 #include  "Read.h"
 #include <sys/wait.h>
 int main(int argc, char const *argv[]) {
-char * InputBuffer;
+char * InputBuffer=(char*)malloc(sizeof(char)*255);
 InputBuffer=Read();
 int status=0;
+char s[2]=" ";
 //InputBuffer="1";
 pid_t pid;
 //fflush(stdout);
@@ -41,7 +42,8 @@ pid_t pid;
     while ((pid=wait(&status))>0);
     fflush(stdout);
     memset(InputBuffer,0,255);
-    InputBuffer=Read();
+    InputBuffer=strtok(Read(),s);
+    printf("InputBuffer: %s\n",InputBuffer );
   }//END OF WHILE
   return 0;
 }
